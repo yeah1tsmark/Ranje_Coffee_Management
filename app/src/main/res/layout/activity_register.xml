@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coffee_background_img"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/txtheadingreg"
+        android:layout_width="312dp"
+        android:layout_height="113dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="66dp"
+        android:text="RANJE COFFEE MANAGEMENT"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtregname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtregname"
+        android:layout_width="257dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="138dp"
+        android:ems="10"
+        android:hint="Enter full name"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtheadingreg" />
+
+    <EditText
+        android:id="@+id/edtregemail"
+        android:layout_width="226dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="19dp"
+        android:ems="10"
+        android:hint="Enter email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtregpass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtregname" />
+
+    <EditText
+        android:id="@+id/edtregpass"
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginBottom="81dp"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/btncreateuser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtregemail" />
+
+    <Button
+        android:id="@+id/btncreateuser"
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="33dp"
+        android:backgroundTint="@color/button_colour"
+        android:text="Create user"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/btngotologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btngotologin"
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="31dp"
+        android:backgroundTint="@color/button_colour"
+        android:text="Go to login"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

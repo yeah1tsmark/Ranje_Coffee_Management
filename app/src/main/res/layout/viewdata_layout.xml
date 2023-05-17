@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:padding="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vblock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="blockname" />
+
+    <TextView
+        android:layout_marginTop="25dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vstdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="stdate" />
+
+    <TextView
+        android:layout_marginTop="75dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vbushesnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="bushes"/>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vacre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="acres" />
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vorgmanure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="orgmanure" />
+
+    <TextView
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="100dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vlaborgmanure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="labour" />
+
+    <TextView
+        android:layout_marginTop="125dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vnorgmanure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="norganic" />
+
+    <TextView
+        android:id="@+id/vlabnorgmanure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="125dp"
+        android:hint="labour"
+        android:textColor="#2196F3"
+        android:textSize="21sp" />
+
+    <TextView
+        android:layout_marginTop="150dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vweeding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="weeding" />
+
+    <TextView
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="150dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vlabweeding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="labour" />
+
+    <TextView
+        android:layout_marginTop="175dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vpruning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="pruning" />
+
+    <TextView
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="175dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vlabpruning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="labour" />
+
+    <TextView
+        android:layout_marginTop="200dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vspraying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="spraying" />
+
+    <TextView
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="200dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vlabspraying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="labour" />
+
+    <TextView
+        android:layout_marginTop="225dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vcherrypick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="cherrypick" />
+
+    <TextView
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="225dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vlabcherrypick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="labour" />
+
+    <TextView
+        android:layout_marginTop="325dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vtransport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="transport" />
+
+    <TextView
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="325dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vlabtransport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="labour" />
+
+    <TextView
+        android:layout_marginTop="250dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vmilling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="milling" />
+
+    <TextView
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="250dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vlabmilling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="labour" />
+
+    <TextView
+        android:layout_marginTop="275dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vdrying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="drying" />
+
+    <TextView
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="275dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vlabdrying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="labour" />
+
+    <TextView
+        android:layout_marginTop="300dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vsorting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="sorting" />
+
+    <TextView
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="300dp"
+        android:textColor="#2196F3"
+        android:textSize="21sp"
+        android:id="@+id/vlabsorting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="labour" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

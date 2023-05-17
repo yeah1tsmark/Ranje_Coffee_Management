@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataInputActivity"
+    android:background="@drawable/coffee_background_img">
+
+    <EditText
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        android:id="@+id/edtblockname"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:hint="Enter blockname"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="100dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+
+    <EditText
+        android:id="@+id/edtstartdate"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Enter start date"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/edtacreage"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="Amount of acres"
+        android:text="Acres"
+        android:textDirection="rtl"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/edtbushesnum"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:textDirection="rtl"
+        android:text="Bushes"
+        android:hint="Number of bushes"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+
+        android:layout_marginLeft="10dp"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:textColor="#F44336"
+        android:textSize="19sp"
+        android:id="@+id/instruct_id"
+        android:layout_marginTop="165dp"/>
+
+    <EditText
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        android:id="@+id/edtorgmanure"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:text="Organic manure"
+        android:layout_marginTop="210dp"
+        android:layout_marginLeft="10dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        android:id="@+id/edtlaborgmanure"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:hint="Labour cost..."
+        android:layout_marginTop="210dp"
+        android:layout_marginLeft="200dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:id="@+id/edtnorgmanure"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:text="N/O manure"
+        android:inputType="text"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="10dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        android:id="@+id/edtlabnorgmanure"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:hint="Labour cost..."
+        android:inputType="text"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="200dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:id="@+id/edtweeding"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:text="Weeding"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="10dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:inputType="text"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        android:id="@+id/edtlabweeding"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:hint="Labour cost..."
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="200dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtpruning"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="330dp"
+        android:text="Pruning"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtlabpruning"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="330dp"
+        android:hint="Labour cost..."
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtspraying"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="370dp"
+        android:text="Spraying"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtlabspraying"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="370dp"
+        android:hint="Labour cost..."
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:id="@+id/edtcherrypick"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="410dp"
+        android:text="Cherry picking"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/edtlabcherrypick"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="410dp"
+        android:hint="Labour cost..."
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edttransport"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="450dp"
+        android:text="Transport to factory"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtlabtransport"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="450dp"
+        android:hint="Labour cost..."
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtmilling"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="490dp"
+        android:text="Milling"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtlabsorting"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="570dp"
+        android:hint="Labour cost.."
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtlabmilling"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="490dp"
+        android:hint="Labour cost..."
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtdrying"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="530dp"
+        android:text="Drying"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtlabdrying"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="530dp"
+        android:hint="Labour cost..."
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/edtsorting"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="570dp"
+        android:text="Sorting"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btnsubmitdata"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="685dp"
+        android:backgroundTint="#A9573D"
+        android:minHeight="32dp"
+        android:text="Submit Data"
+        android:textSize="19sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+</RelativeLayout>

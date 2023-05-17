@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "393483415167",
+    "project_id": "ranjecoffeemanagement",
+    "storage_bucket": "ranjecoffeemanagement.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393483415167:android:4c227f0aa8139c2a37d94a",
+        "android_client_info": {
+          "package_name": "com.example.ranjecoffeemanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393483415167-dfhse1kvjpn5dcqm7vplvovparp9hvi5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_Yc2DzWWnFrmGRcj7eIQBpE8A98YNWUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393483415167-dfhse1kvjpn5dcqm7vplvovparp9hvi5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
