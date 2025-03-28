@@ -28,7 +28,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-
+        //textheadingreg = findViewById(R.id.)
         editregname = findViewById(R.id.edtregname)
         editregemail = findViewById(R.id.edtregemail)
         editregpass = findViewById(R.id.edtregpass)
