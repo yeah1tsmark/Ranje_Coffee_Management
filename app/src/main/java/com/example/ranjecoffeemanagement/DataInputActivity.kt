@@ -14,6 +14,8 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseAuth
+
 
 class DataInputActivity : AppCompatActivity(){
     lateinit var blockname:EditText
@@ -80,6 +82,12 @@ class DataInputActivity : AppCompatActivity(){
         var SpannableString = SpannableString(instructionview)
         SpannableString.setSpan(UnderlineSpan(),0,SpannableString.length, 0)
         instruction_id.text = SpannableString
+        // Receive block name passed from MainActivity
+        val receivedBlockName = intent.getStringExtra("BLOCK_NAME")
+        if (!receivedBlockName.isNullOrEmpty()) {
+            blockname.setText(receivedBlockName)
+        }
+
 
         submitbutton.setOnClickListener{
             var blockname = blockname.text.toString().trim()
@@ -128,7 +136,31 @@ class DataInputActivity : AppCompatActivity(){
 
             } else{
 
-                var mychild = FirebaseDatabase.getInstance().reference.child("Data/" + timeid)
+                //var mychild = FirebaseDatabase.getInstance().reference.child("Data/" + timeid)
+                val currentUser = FirebaseAuth.getInstance().currentUser
+                val uid = currentUser?.uid
+
+                if (uid != null) {
+                    val mychild = FirebaseDatabase.getInstance().reference
+                        .child("Data")
+                        .child(uid)
+                        .child(timeid)
+
+                    val blockdata = Block( /* ... keep your data */ )
+
+                    progress.show()
+
+                    mychild.setValue(blockdata).addOnCompleteListener {
+                        if (it.isSuccessful){
+                            Toast.makeText(this, "Data uploaded successfully!", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Failed to upload data!", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } else {
+                    Toast.makeText(this, "User not logged in!", Toast.LENGTH_SHORT).show()
+                }
+
 
                 var blockdata = Block( blockname,stdate,acre,bushesnum,orgmanure,laborgmanure,
                     norgmanure,labnorgmanure,weeding,labweeding,pruning,labpruning,spraying,
@@ -136,13 +168,13 @@ class DataInputActivity : AppCompatActivity(){
                     labmilling,drying,labdrying,sorting ,labsorting ,timeid)
 
                 // progress
-                progress.show()
+                //progress.show()
 
-                mychild.setValue(blockdata).addOnCompleteListener {
-                    if (it.isSuccessful){
+                //mychild.setValue(blockdata).addOnCompleteListener {
+                  //  if (it.isSuccessful){
                         Toast.makeText(this, "Data uploaded successfully!", Toast.LENGTH_SHORT).show()
-                    } else{
-                        Toast.makeText(this, "Failed to upload data!", Toast.LENGTH_SHORT).show()
+                    //} else{
+                      //  Toast.makeText(this, "Failed to upload data!", Toast.LENGTH_SHORT).show()
                     }
 
                 }
@@ -154,7 +186,7 @@ class DataInputActivity : AppCompatActivity(){
 
         }
 
-    }
 
-}
+
+
 

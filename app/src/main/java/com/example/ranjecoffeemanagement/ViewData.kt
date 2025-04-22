@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -23,7 +24,11 @@ class ViewData : AppCompatActivity() {
 
         var myadapter = CustomAdapter(applicationContext, blockdata)
 
-        var mydb = FirebaseDatabase.getInstance().reference.child("Data")
+       // var mydb = FirebaseDatabase.getInstance().reference.child("Data")
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null) {
+            val userId = currentUser.uid
+            val mydb = FirebaseDatabase.getInstance().reference.child("Data").child(userId)
         mydb.addValueEventListener(object : ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -46,5 +51,5 @@ class ViewData : AppCompatActivity() {
         })
         mylistview.adapter = myadapter
     }
-
+    }
 }

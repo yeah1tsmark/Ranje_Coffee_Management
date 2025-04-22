@@ -46,7 +46,9 @@ class MainActivity : AppCompatActivity() {
         gotoview = findViewById(R.id.btngotoviewdata)
 
         buttontodatainput.setOnClickListener{
+            val selectedBlock = textblock.text.toString()
             var gotodatainput = Intent(this, DataInputActivity::class.java)
+            gotodatainput.putExtra("BLOCK_NAME", selectedBlock)
             startActivity(gotodatainput)
         }
 

@@ -59,13 +59,16 @@ class LoginActivity : AppCompatActivity() {
 
                         finish()
 
-                    }else{
+                    }
+                    else{
                         Toast.makeText(this, "Failed to login!", Toast.LENGTH_SHORT).show()
                     }
+
                 }
             }
         }
     }
+
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (backPressedTime + 3000 > System.currentTimeMillis()) {
