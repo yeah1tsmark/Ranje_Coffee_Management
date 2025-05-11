@@ -1,25 +1,27 @@
 package com.example.ranjecoffeemanagement
 
 import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.app.ProgressDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
-import com.google.firebase.database.FirebaseDatabase
+import androidx.appcompat.app.AppCompatActivity
+//import androidx.compose.ui.semantics.setText
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 
-class DataInputActivity : AppCompatActivity(){
-    lateinit var blockname:EditText
-    lateinit var startdate:EditText
+class DataInputActivity : AppCompatActivity() {
+    lateinit var blockname: EditText
+    lateinit var startdate: EditText
     lateinit var acreage:EditText
     lateinit var numbushes:EditText
     lateinit var editorgmanure:EditText
@@ -88,6 +90,11 @@ class DataInputActivity : AppCompatActivity(){
             blockname.setText(receivedBlockName)
         }
 
+        startdate.setOnClickListener{
+            showDatePickerDialog()
+        }
+
+
 
         submitbutton.setOnClickListener{
             var blockname = blockname.text.toString().trim()
@@ -136,7 +143,7 @@ class DataInputActivity : AppCompatActivity(){
 
             } else{
 
-                //var mychild = FirebaseDatabase.getInstance().reference.child("Data/" + timeid)
+                var mychild = FirebaseDatabase.getInstance().reference.child("Data/" + timeid)
                 val currentUser = FirebaseAuth.getInstance().currentUser
                 val uid = currentUser?.uid
 
@@ -146,33 +153,41 @@ class DataInputActivity : AppCompatActivity(){
                         .child(uid)
                         .child(timeid)
 
-                    val blockdata = Block( /* ... keep your data */ )
+                    val blockdata = Block(
+                        blockname, stdate, acre, bushesnum, orgmanure, laborgmanure,
+                        norgmanure, labnorgmanure, weeding, labweeding, pruning, labpruning,
+                        spraying, labspraying, cherrypicking, labcherrypicking,
+                        transport, labtransport, milling, labmilling,
+                        drying, labdrying, sorting, labsorting, timeid
+                    )
 
                     progress.show()
 
                     mychild.setValue(blockdata).addOnCompleteListener {
-                        if (it.isSuccessful){
+                        progress.dismiss()
+                        if (it.isSuccessful) {
                             Toast.makeText(this, "Data uploaded successfully!", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(this, "Failed to upload data!", Toast.LENGTH_SHORT).show()
                         }
                     }
-                } else {
+                }
+                else {
                     Toast.makeText(this, "User not logged in!", Toast.LENGTH_SHORT).show()
                 }
 
 
-                var blockdata = Block( blockname,stdate,acre,bushesnum,orgmanure,laborgmanure,
-                    norgmanure,labnorgmanure,weeding,labweeding,pruning,labpruning,spraying,
-                    labspraying,cherrypicking,labcherrypicking,transport,labtransport,milling,
-                    labmilling,drying,labdrying,sorting ,labsorting ,timeid)
+               //var blockdata = Block( blockname,stdate,acre,bushesnum,orgmanure,laborgmanure,
+                 //   norgmanure,labnorgmanure,weeding,labweeding,pruning,labpruning,spraying,
+                   // labspraying,cherrypicking,labcherrypicking,transport,labtransport,milling,
+                    // labmilling,drying,labdrying,sorting ,labsorting ,timeid)
 
                 // progress
                 //progress.show()
 
                 //mychild.setValue(blockdata).addOnCompleteListener {
                   //  if (it.isSuccessful){
-                        Toast.makeText(this, "Data uploaded successfully!", Toast.LENGTH_SHORT).show()
+                      //  Toast.makeText(this, "Data uploaded successfully!", Toast.LENGTH_SHORT).show()
                     //} else{
                       //  Toast.makeText(this, "Failed to upload data!", Toast.LENGTH_SHORT).show()
                     }
@@ -183,6 +198,30 @@ class DataInputActivity : AppCompatActivity(){
 
 
             }
+    private fun showDatePickerDialog() {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+        val datePickerDialog = DatePickerDialog(
+            this,
+            { _, selectedYear, selectedMonth, selectedDay ->
+                // Handle the selected date
+                val selectedDateCalendar = Calendar.getInstance()
+                selectedDateCalendar.set(selectedYear, selectedMonth, selectedDay)
+
+                val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()) // You can change the date format
+                val formattedDate = dateFormat.format(selectedDateCalendar.time)
+
+                startdate.setText(formattedDate)
+            },
+            year,
+            month,
+            day
+        )
+        datePickerDialog.show()
+    }
 
         }
 

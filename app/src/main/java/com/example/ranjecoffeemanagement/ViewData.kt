@@ -24,7 +24,7 @@ class ViewData : AppCompatActivity() {
 
         var myadapter = CustomAdapter(applicationContext, blockdata)
 
-       // var mydb = FirebaseDatabase.getInstance().reference.child("Data")
+        var mydb = FirebaseDatabase.getInstance().reference.child("Data")
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             val userId = currentUser.uid
@@ -34,9 +34,10 @@ class ViewData : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 //get data and display in array
                 blockdata.clear()
-                for (snap in snapshot.children){
-                    var person = snap.getValue(Block::class.java)
+                for (snap in snapshot.children) {
+                    val person = snap.getValue(Block::class.java)
                     blockdata.add(person!!)
+
                 }
 
                 myadapter.notifyDataSetChanged()
