@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FEFEFE"
+    android:background="@drawable/coffee_background_img_9"
     tools:context=".SplashScreenActivity">
 
     <ImageView
         android:id="@+id/iv_note"
-        android:layout_width="200dp"
+        android:layout_width="600dp"
         android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/coffee_background_img_8" />
+        android:layout_centerInParent="true" />
 
 
 

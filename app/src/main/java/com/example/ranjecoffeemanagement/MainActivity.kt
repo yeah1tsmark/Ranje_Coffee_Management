@@ -58,22 +58,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         rbuttonranjemain.setOnClickListener {
-            textblock.text = "Ranje Main"
+            textblock.text = "Block A"
         }
         rbuttonranjeannex.setOnClickListener {
-            textblock.text = "Ranje Annex"
+            textblock.text = "Block B"
         }
 
         rbuttonsangalo.setOnClickListener {
-            textblock.text = "Sangalo"
+            textblock.text = "Block C"
         }
 
         rbuttonbuema.setOnClickListener {
-            textblock.text = "Buema"
+            textblock.text = "Block D"
         }
 
         rbuttonnangeni.setOnClickListener {
-            textblock.text = "Nangeni"
+            textblock.text = "Block E"
         }
 
     }

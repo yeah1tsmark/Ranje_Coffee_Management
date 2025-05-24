@@ -58,7 +58,7 @@
             android:id="@+id/rbtnranjemain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ranje Main"
+            android:text="Block A"
             android:textColor="@color/black"
             android:textSize="35sp" />
 
@@ -66,7 +66,7 @@
             android:id="@+id/rbtnranjeannex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ranje Annex"
+            android:text="Block B"
             android:textColor="@color/black"
             android:textSize="35sp" />
 
@@ -74,7 +74,7 @@
             android:id="@+id/rbtnsangalo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sangalo"
+            android:text="Block C"
             android:textColor="@color/black"
             android:textSize="35sp" />
 
@@ -82,7 +82,7 @@
             android:id="@+id/rbtnbuema"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Buema"
+            android:text="Block D"
             android:textColor="@color/black"
             android:textSize="35sp" />
 
@@ -90,7 +90,7 @@
             android:id="@+id/rbtnnangeni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nangeni"
+            android:text="Block E"
             android:textColor="@color/black"
             android:textSize="35sp" />
     </RadioGroup>

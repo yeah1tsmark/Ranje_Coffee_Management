@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -24,25 +25,25 @@ class DataInputActivity : AppCompatActivity() {
     lateinit var startdate: EditText
     lateinit var acreage:EditText
     lateinit var numbushes:EditText
-    lateinit var editorgmanure:EditText
+    lateinit var editorgmanure: CheckBox
     lateinit var editlaborgmanure:EditText
-    lateinit var editnorgmanure:EditText
+    lateinit var editnorgmanure:CheckBox
     lateinit var editlabnorgmanure:EditText
-    lateinit var editweeding:EditText
+    lateinit var editweeding:CheckBox
     lateinit var editlabweeding:EditText
-    lateinit var editpruning:EditText
+    lateinit var editpruning:CheckBox
     lateinit var editlabpruning:EditText
-    lateinit var editspraying:EditText
+    lateinit var editspraying:CheckBox
     lateinit var editlabspraying:EditText
-    lateinit var editcherrypick:EditText
+    lateinit var editcherrypick:CheckBox
     lateinit var editlabcherrypick:EditText
-    lateinit var edittransport:EditText
+    lateinit var edittransport:CheckBox
     lateinit var editlabtransport:EditText
-    lateinit var editmilling:EditText
+    lateinit var editmilling:CheckBox
     lateinit var editlabmilling:EditText
-    lateinit var editdrying:EditText
+    lateinit var editdrying:CheckBox
     lateinit var editlabdrying:EditText
-    lateinit var editsorting:EditText
+    lateinit var editsorting:CheckBox
     lateinit var editlabsorting:EditText
     lateinit var instruction_id:TextView
     lateinit var submitbutton:Button
@@ -80,7 +81,7 @@ class DataInputActivity : AppCompatActivity() {
         submitbutton = findViewById(R.id.btnsubmitdata)
         instruction_id = findViewById(R.id.instruct_id)
 
-        var instructionview = "Instruction: Type Yes/No"
+        var instructionview = "Check the box if activity is done"
         var SpannableString = SpannableString(instructionview)
         SpannableString.setSpan(UnderlineSpan(),0,SpannableString.length, 0)
         instruction_id.text = SpannableString
@@ -99,28 +100,38 @@ class DataInputActivity : AppCompatActivity() {
         submitbutton.setOnClickListener{
             var blockname = blockname.text.toString().trim()
             var stdate = startdate.text.toString().trim()
-            var acre = acreage.text.toString().trim()
-            var bushesnum = numbushes.text.toString().trim()
-            var orgmanure = editorgmanure.text.toString().trim()
-            var laborgmanure = editlaborgmanure.text.toString().trim()
-            var norgmanure = editnorgmanure.text.toString().trim()
-            var labnorgmanure = editlabnorgmanure.text.toString().trim()
-            var weeding = editweeding.text.toString().trim()
-            var labweeding = editlabweeding.text.toString().trim()
-            var pruning = editpruning.text.toString().trim()
-            var labpruning = editlabpruning.text.toString().trim()
-            var spraying = editspraying.text.toString().trim()
-            var labspraying = editlabspraying.text.toString().trim()
-            var cherrypicking = editcherrypick.text.toString().trim()
-            var labcherrypicking = editlabcherrypick.text.toString().trim()
-            var transport = edittransport.text.toString().trim()
-            var labtransport = editlabtransport.text.toString().trim()
-            var milling = editmilling.text.toString().trim()
-            var labmilling = editlabmilling.text.toString().trim()
-            var drying = editdrying.text.toString().trim()
-            var labdrying = editlabdrying.text.toString().trim()
-            var sorting = editsorting.text.toString().trim()
-            var labsorting = editlabsorting.text.toString().trim()
+            var acre = "${acreage.text} acres of land"
+            var bushesnum = "${numbushes.text} coffee bushes"
+            var orgmanure = if (editorgmanure.isChecked)
+                "Organic manure done" else "Organic manure not done"
+            var laborgmanure = "ksh ${editlaborgmanure.text}"
+            var norgmanure = if (editnorgmanure.isChecked)
+                "Non-organic manure done" else "Non-organic manure not done"
+            var labnorgmanure = "ksh ${editlabnorgmanure.text}"
+            var weeding = if (editweeding.isChecked)
+                "Weeding done" else "Weeding not done"
+            var labweeding = "ksh ${editlabweeding.text}"
+            var pruning = if (editpruning.isChecked)
+                "Pruning done" else "Pruning not done"
+            var labpruning = "ksh ${editlabpruning.text}"
+            var spraying = if (editspraying.isChecked)
+                "Spraying done" else "Spraying not done"
+            var labspraying = "ksh ${editlabspraying.text}"
+            var cherrypicking = if (editcherrypick.isChecked)
+                "Cherry picking done" else "Cherry picking not done"
+            var labcherrypicking = "ksh ${editlabcherrypick.text}"
+            var transport = if (edittransport.isChecked)
+                "Transport to factory done" else "Transport to factory"
+            var labtransport = "ksh ${editlabtransport.text}"
+            var milling = if (editmilling.isChecked)
+                "Milling done" else "Milling not done"
+            var labmilling = "ksh ${editlabmilling.text}"
+            var drying = if (editdrying.isChecked)
+                "Drying done" else "Drying not done"
+            var labdrying = "ksh ${editlabdrying.text}"
+            var sorting = if (editsorting.isChecked)
+                "Sorting done" else "Sorting not done"
+            var labsorting = "ksh ${editlabsorting.text}"
 
             var timeid = System.currentTimeMillis().toString()
 
@@ -131,13 +142,14 @@ class DataInputActivity : AppCompatActivity() {
 
             // validation
             if (blockname.isEmpty() || stdate.isEmpty() || acre.isEmpty() || bushesnum.isEmpty() ||
-                orgmanure.isEmpty() || laborgmanure.isEmpty() || norgmanure.isEmpty() ||
-                labnorgmanure.isEmpty() || weeding.isEmpty() || labweeding.isEmpty() ||
+                orgmanure.isEmpty() || laborgmanure.isEmpty() || //norgmanure.isEmpty() ||
+                weeding.isEmpty() || labweeding.isEmpty() ||
                 pruning.isEmpty() || labpruning.isEmpty() || labpruning.isEmpty() ||
                 spraying.isEmpty() || labspraying.isEmpty() || cherrypicking.isEmpty() ||
                 labcherrypicking.isEmpty() || transport.isEmpty() || labtransport.isEmpty()
                 || milling.isEmpty() || labmilling.isEmpty() || drying.isEmpty() ||
-                labdrying.isEmpty() || sorting.isEmpty() || labsorting.isEmpty()){
+                labdrying.isEmpty() || sorting.isEmpty() || labsorting.isEmpty())
+            {
 
                 Toast.makeText(this, "Cannot submit empty fields!", Toast.LENGTH_SHORT).show()
 

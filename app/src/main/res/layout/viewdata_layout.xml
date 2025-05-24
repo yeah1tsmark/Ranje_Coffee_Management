@@ -55,7 +55,7 @@
         android:hint="orgmanure" />
 
     <TextView
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="270dp"
         android:layout_marginTop="100dp"
         android:textSize="21sp"
         android:text=""
@@ -79,7 +79,7 @@
         android:layout_width="match_parent"
         android:text=""
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="270dp"
         android:layout_marginTop="125dp"
         android:hint="labour"
         android:textSize="21sp" />
@@ -95,7 +95,7 @@
         android:hint="weeding" />
 
     <TextView
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="270dp"
         android:layout_marginTop="150dp"
         android:textSize="21sp"
         android:id="@+id/vlabweeding"
@@ -115,7 +115,7 @@
         android:hint="pruning" />
 
     <TextView
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="175dp"
         android:textSize="21sp"
         android:id="@+id/vlabpruning"
@@ -135,7 +135,7 @@
         android:hint="spraying" />
 
     <TextView
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="200dp"
         android:textSize="21sp"
         android:text=""
@@ -155,7 +155,7 @@
         android:hint="cherrypick" />
 
     <TextView
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="225dp"
         android:text=""
         android:textSize="21sp"
@@ -175,7 +175,7 @@
         android:hint="milling" />
 
     <TextView
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="250dp"
         android:textSize="21sp"
         android:id="@+id/vlabmilling"
@@ -196,7 +196,7 @@
         android:hint="drying" />
 
     <TextView
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="270dp"
         android:layout_marginTop="275dp"
         android:textSize="21sp"
         android:id="@+id/vlabdrying"
@@ -216,7 +216,7 @@
         android:hint="sorting" />
 
     <TextView
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="300dp"
         android:textSize="21sp"
         android:id="@+id/vlabsorting"
@@ -238,7 +238,7 @@
         android:id="@+id/vlabtransport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="270dp"
         android:layout_marginTop="325dp"
         android:hint="labour"
         android:text=""
