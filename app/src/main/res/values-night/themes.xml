@@ -5,7 +5,11 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item> -->
         <!-- res/values-night/themes.xml (dark theme) -->
 
+        <!-- Make the activity full screen -->
         <item name="android:windowFullscreen">true</item>
+        <!-- Optional: Remove the action bar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:windowNoTitle">true</item>
     </style>
 

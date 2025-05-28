@@ -7,6 +7,7 @@
     android:background="@drawable/coffee_background_img"
     tools:context=".RegisterActivity">
 
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
         android:layout_width="wrap_content"
@@ -30,10 +31,9 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="0dp"
-        android:text="RANJE COFFEE MANAGEMENT"
+        android:text="WELCOME TO FALCON FARM MANAGER"
         android:textColor="@color/white"
         android:textSize="40sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/edtregname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         android:id="@+id/edtregname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="60dp"
         android:hint="Enter full name"
         android:inputType="text"
         android:textColor="@color/white"
@@ -110,7 +110,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/button_colour"
         android:text="Go to login"
         android:textSize="35sp"
@@ -119,6 +120,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/btncreateuser"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

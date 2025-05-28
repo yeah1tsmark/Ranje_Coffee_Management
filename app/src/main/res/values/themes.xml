@@ -3,8 +3,11 @@
     <style name="Theme.RanjeCoffeeManagement" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="android:textColorPrimary">@color/textColorPrimary</item> --><!-- res/values/themes.xml (light theme) -->
+        <!-- Make the activity full screen -->
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowNoTitle">true</item>
+        <!-- Optional: Remove the action bar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar" />

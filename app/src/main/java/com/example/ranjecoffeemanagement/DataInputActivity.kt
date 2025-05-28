@@ -3,6 +3,7 @@ package com.example.ranjecoffeemanagement
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
@@ -21,7 +22,7 @@ import java.util.Locale
 
 
 class DataInputActivity : AppCompatActivity() {
-    lateinit var blockname: EditText
+    lateinit var blocknameText: EditText
     lateinit var startdate: EditText
     lateinit var acreage:EditText
     lateinit var numbushes:EditText
@@ -54,7 +55,7 @@ class DataInputActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_input)
 
-        blockname = findViewById(R.id.edtblockname)
+        blocknameText = findViewById(R.id.edtblockname)
         startdate = findViewById(R.id.edtstartdate)
         acreage = findViewById(R.id.edtacreage)
         numbushes = findViewById(R.id.edtbushesnum)
@@ -82,23 +83,22 @@ class DataInputActivity : AppCompatActivity() {
         instruction_id = findViewById(R.id.instruct_id)
 
         var instructionview = "Check the box if activity is done"
-        var SpannableString = SpannableString(instructionview)
-        SpannableString.setSpan(UnderlineSpan(),0,SpannableString.length, 0)
-        instruction_id.text = SpannableString
+        var spannableString = SpannableString(instructionview)
+        spannableString.setSpan(UnderlineSpan(),0,spannableString.length, 0)
+        instruction_id.text = spannableString
+
         // Receive block name passed from MainActivity
         val receivedBlockName = intent.getStringExtra("BLOCK_NAME")
         if (!receivedBlockName.isNullOrEmpty()) {
-            blockname.setText(receivedBlockName)
+            blocknameText.setText(receivedBlockName)
         }
 
         startdate.setOnClickListener{
             showDatePickerDialog()
         }
 
-
-
         submitbutton.setOnClickListener{
-            var blockname = blockname.text.toString().trim()
+            var blocknameText = blocknameText.text.toString().trim()
             var stdate = startdate.text.toString().trim()
             var acre = "${acreage.text} acres of land"
             var bushesnum = "${numbushes.text} coffee bushes"
@@ -141,21 +141,78 @@ class DataInputActivity : AppCompatActivity() {
             progress.setMessage("Please wait!")
 
             // validation
-            if (blockname.isEmpty() || stdate.isEmpty() || acre.isEmpty() || bushesnum.isEmpty() ||
-                orgmanure.isEmpty() || laborgmanure.isEmpty() || //norgmanure.isEmpty() ||
-                weeding.isEmpty() || labweeding.isEmpty() ||
-                pruning.isEmpty() || labpruning.isEmpty() || labpruning.isEmpty() ||
-                spraying.isEmpty() || labspraying.isEmpty() || cherrypicking.isEmpty() ||
-                labcherrypicking.isEmpty() || transport.isEmpty() || labtransport.isEmpty()
-                || milling.isEmpty() || labmilling.isEmpty() || drying.isEmpty() ||
-                labdrying.isEmpty() || sorting.isEmpty() || labsorting.isEmpty())
-            {
+           // if (blocknameText.isEmpty() || stdate.isEmpty() || acre.isEmpty() || bushesnum.isEmpty()
+             //   || laborgmanure.isEmpty() || labweeding.isEmpty() || labpruning.isEmpty() ||
+               // labspraying.isEmpty() || labcherrypicking.isEmpty() || labtransport.isEmpty()||
+                //labmilling.isEmpty() || labdrying.isEmpty() || labsorting.isEmpty())
+            //{
 
-                Toast.makeText(this, "Cannot submit empty fields!", Toast.LENGTH_SHORT).show()
+              //  Toast.makeText(this, "Cannot submit empty text fields!", Toast.LENGTH_SHORT).show()
 
-            } else{
+            //}
+            // Validation for required basic fields
+            if (blocknameText.isEmpty() || stdate.isEmpty() || acreage.text.toString().trim().isEmpty() || numbushes.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please fill in block name, date, acreage, and number of bushes", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
-                var mychild = FirebaseDatabase.getInstance().reference.child("Data/" + timeid)
+            // Validation for activities: if checked, must have labor input
+            if (editorgmanure.isChecked && editlaborgmanure.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for organic manure", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (editnorgmanure.isChecked && editlabnorgmanure.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for non-organic manure", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (editweeding.isChecked && editlabweeding.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for weeding", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (editpruning.isChecked && editlabpruning.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for pruning", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (editspraying.isChecked && editlabspraying.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for spraying", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (editcherrypick.isChecked && editlabcherrypick.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for cherry picking", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (edittransport.isChecked && editlabtransport.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for transport", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (editmilling.isChecked && editlabmilling.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for milling", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (editdrying.isChecked && editlabdrying.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for drying", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (editsorting.isChecked && editlabsorting.text.toString().trim().isEmpty()) {
+                Toast.makeText(this, "Please enter labor cost for sorting", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // If all validations passed, continue to upload
+            // your existing code for setting values and uploading to Firebase goes here
+
+            else{
+
+               // var mychild = FirebaseDatabase.getInstance().reference.child("Data/" + timeid)
                 val currentUser = FirebaseAuth.getInstance().currentUser
                 val uid = currentUser?.uid
 
@@ -166,7 +223,7 @@ class DataInputActivity : AppCompatActivity() {
                         .child(timeid)
 
                     val blockdata = Block(
-                        blockname, stdate, acre, bushesnum, orgmanure, laborgmanure,
+                        blocknameText, stdate, acre, bushesnum, orgmanure, laborgmanure,
                         norgmanure, labnorgmanure, weeding, labweeding, pruning, labpruning,
                         spraying, labspraying, cherrypicking, labcherrypicking,
                         transport, labtransport, milling, labmilling,
@@ -179,6 +236,12 @@ class DataInputActivity : AppCompatActivity() {
                         progress.dismiss()
                         if (it.isSuccessful) {
                             Toast.makeText(this, "Data uploaded successfully!", Toast.LENGTH_SHORT).show()
+
+                            val gotomain = Intent(this, MainActivity::class.java)
+                            startActivity(gotomain)
+
+                            finish()
+
                         } else {
                             Toast.makeText(this, "Failed to upload data!", Toast.LENGTH_SHORT).show()
                         }
@@ -205,9 +268,6 @@ class DataInputActivity : AppCompatActivity() {
                     }
 
                 }
-
-
-
 
             }
     private fun showDatePickerDialog() {

@@ -9,7 +9,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/coffee_background_img_8"
-        android:label="@string/app_name"
+        android:label="Falcon Coffee Management"
         android:roundIcon="@drawable/coffee_background_img_8"
         android:supportsRtl="true"
         android:theme="@style/Theme.RanjeCoffeeManagement"
@@ -21,18 +21,20 @@
         <activity
             android:name=".DataInputActivity"
             android:theme="@style/Theme.RanjeCoffeeManagement"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:noHistory="true"
-            android:theme="@style/SplashScreenTheme">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.RanjeCoffeeManagement"
